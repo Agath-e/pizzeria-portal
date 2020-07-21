@@ -9,6 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 import {NavLink} from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
 
 const selectedDate = new Date('2014-08-18T21:11:54');
 
@@ -167,17 +168,31 @@ const renderActions = status => {
       return null;
   }
 };
+
+const classes = makeStyles((theme) => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+}));
+
+
 const Tables = () => (
 
   <Paper className={styles.component}> 
-    <div className={styles.calendar}>
-      <form noValidate>
+    <div>
+      <form className={classes.container} noValidate >
         <TextField
           id="date"
           label="Choose day"
           type="date"
           defaultValue={selectedDate}
-          className={styles.textfield}
+          className={classes.textField}
           InputLabelProps={{
             shrink: true,
           }}
@@ -187,7 +202,7 @@ const Tables = () => (
           label="Choose hour"
           type="time"
           defaultValue="12:00"
-          className={styles.textfield}
+          className={classes.textField}
           InputLabelProps={{
             shrink: true,
           }}

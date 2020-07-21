@@ -42,29 +42,29 @@ const Kitchen = () => (
     <Table>
       <TableHead>
         <TableRow>
-          <TableCell>Table</TableCell>
-          <TableCell>Status</TableCell>
-          <TableCell>Order</TableCell>
-          <TableCell>Action</TableCell>
+          <TableCell className={styles.head}>Table</TableCell>
+          <TableCell className={styles.head}>Status</TableCell>
+          <TableCell className={styles.head}>Order</TableCell>
+          <TableCell className={styles.head}>Action</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         {demoContent.map(row => (
           <TableRow key={row.id}>
-            <TableCell component="th" scope="row">
+            <TableCell className={styles.head} component="th" scope="row">
               {row.id}
             </TableCell>
-            <TableCell>
+            <TableCell className={styles.head}>
               {row.status}
             </TableCell>
-            <TableCell>
+            <TableCell className={styles.head}>
               {row.order && (
                 <Button to={`${process.env.PUBLIC_URL}/kitchen${row.order}`}>
                   {row.order}
                 </Button>
               )}
             </TableCell>
-            <TableCell>
+            <TableCell className={styles.head}>
               {renderActions(row.status)}
             </TableCell>
           </TableRow>
