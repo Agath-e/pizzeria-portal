@@ -18,7 +18,7 @@
         - każda kolumna = 1 stolik
         - każdy wiersz = 30 minut
         - ma przypominać widok tygodnia Google, gdzie w kolumnach zamiast dni są różne stoliki
-        - po kliknieciu rezerwacji lub eventu, przechodzimy na stronę szczegółow
+        - po kliknieciu rezerwacji lub eventu, przechodzimy na stronę szczegółów
 - '/tables/booking/:id'
     - musi ona zwierać wszsytkie informację dotyczące irezerwacji
     - umożliwa edycję i zapisanie zmian
@@ -33,7 +33,7 @@
 
 - '/waiter'
     - tabela
-        - w iwerszach stoliki
+        - w wierszach stoliki
         - w kolumnach różne rodzaje inforamcji (status, czas od ostatniej aktywności)
         - w ostatniej kolumnie dostępne akcje dla danego stolika
 - '/waiter/order/new'
@@ -48,7 +48,7 @@
 # Widok kuchni
 
 -'/kitchen'
-    - wyświetla listę zamówień w koejności ich złożenia 
+    - wyświetla listę zamówień w kolejności ich złożenia 
     - lista musi zawierać:
         - numer stolika (lub zamówienia zdalnego) 
         - pełne informacje dot. zamówionych dań

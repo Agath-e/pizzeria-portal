@@ -2,4 +2,25 @@
 
 .component {
   padding: $base-size;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+.calendar {
+  margin: 20px;
+}
+.textfield {
+  margin: 20px;
+  width: 300px;
+}
+
+.green {
+  color: #009000;
+}
+
+.red {
+  color: #cf2f2f;
 }

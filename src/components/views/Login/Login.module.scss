@@ -1,5 +1,20 @@
 @import '../../../styles/settings.scss';
 
+
 .component {
   padding: $base-size;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+.textfield {
+  margin: 20px;
+  width: 300px;
+}
+
+.button {
+  margin: 20px;
 }
