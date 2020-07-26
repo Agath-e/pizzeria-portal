@@ -41,23 +41,22 @@ export const fetchFromAPI = () => {
   };
 };
 
-export const updateApp = () => {
+export const updateApp = (rowId, status) => {
   return (dispatch, getState) => {
-    dispatch(fetchStarted());
-    console.log('fetchStarted update',dispatch);
-    console.log('url =>',`${api.url}/${api.tables}`);
+    
 
     Axios
-      .get(`${api.url}/${api.tables}`)
+      .post(`${api.url}/${api.tables}`)
       .then(res => {
         console.log('then ',res);
-        dispatch(fetchUpdate(res.data));
+        dispatch(fetchUpdate(rowId, status));
       })
       .catch(err => {
         console.log('error',err);
         dispatch(fetchError(err.message || true));
       });
-      
+    
+    
   };
 };
 /* reducer */
