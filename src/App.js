@@ -12,8 +12,9 @@ import { StylesProvider } from '@material-ui/core/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import Booking from './components/views/Booking/Booking';
+import Order from './components/views/Order/Order';
 
-import Provider from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './redux/store';
 
 const theme = createMuiTheme({
@@ -38,6 +39,7 @@ function App() {
                 <Route exact path={process.env.PUBLIC_URL + '/kitchen'} component={Kitchen} />
                 <Route exact path={process.env.PUBLIC_URL + '/tables/event/new'} component={Events} />
                 <Route exact path={process.env.PUBLIC_URL + '/tables/booking/new'} component={Booking} />
+                <Route exact path={process.env.PUBLIC_URL + '/waiter/order/new'} component={Order} />
               </Switch>
             </MainLayout>
           </ThemeProvider>
