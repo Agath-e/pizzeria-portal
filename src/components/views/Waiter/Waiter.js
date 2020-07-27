@@ -40,7 +40,7 @@ class Waiter extends React.Component {
     console.log('rowId onClick',rowId);
 
     const { updateTables } = this.props;
-    updateTables();
+    updateTables(rowId, status);
   }
 
   renderActions(status, rowId){
@@ -122,7 +122,7 @@ class Waiter extends React.Component {
                     )}
                   </TableCell>
                   <TableCell>
-                    {this.renderActions(row.status, row.id,)}
+                    {this.renderActions(row.status, row.id)}
                   </TableCell>
                 </TableRow>
               ))}

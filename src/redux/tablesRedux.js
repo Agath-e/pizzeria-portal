@@ -46,10 +46,10 @@ export const updateApp = (rowId, status) => {
     
 
     Axios
-      .post(`${api.url}/${api.tables}`)
+      .get(`${api.url}/${api.tables}`)
       .then(res => {
         console.log('then ',res);
-        dispatch(fetchUpdate(rowId, status));
+        dispatch(fetchUpdate({rowId, status}));
       })
       .catch(err => {
         console.log('error',err);
@@ -91,13 +91,20 @@ export default function reducer(statePart = [], action = {}) {
       };
     }
     case FETCH_UPDATE: {
+      const data = [...statePart.data].filter(el => el.id !== action.payload.rowId);
+      const orderToUpdate = [...statePart.data].find(el => el.id === action.payload.rowId);
+      orderToUpdate.status = action.payload.status;
+      console.log (statePart);
+      const result = [...data, orderToUpdate].sort((orderPrev, orderNext) => {
+        return orderPrev.id - orderNext.id;
+      });
       return {
         ...statePart,
         loading: {
           active: false,
           error: false,
         },
-        data: action.payload,
+        data: result,
       };
     }
     default:
