@@ -9,7 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 import {NavLink} from 'react-router-dom';
-import TimePicker from 'basic-react-timepicker';
+
 
 const selectedDate = new Date('2014-08-18T21:11:54');
 
@@ -171,8 +171,7 @@ const renderActions = status => {
 
 
 const Tables = () => (
-
-  
+   
   
 
   <Paper className={styles.component}> 
@@ -188,9 +187,18 @@ const Tables = () => (
             shrink: true,
           }}
         />
-        <TimePicker 
-          name="default"
-          defaultValue="11:30AM"
+        <TextField
+          id="time"
+          label="Alarm clock"
+          type="time"
+          defaultValue="12:00"
+          className={styles.textField}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          inputProps={{
+            step: 1800, // 30 min
+          }}
         />
       </form>
     </div>
